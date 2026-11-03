@@ -6,6 +6,7 @@ export default {
     orders: 'Orders',
     finance: 'Finance',
     demandForecast: 'Demand Forecast',
+    restocking: 'Restocking',
     companyName: 'Catalyst Components',
     subtitle: 'Inventory Management System'
   },
@@ -111,9 +112,15 @@ export default {
     avgOrderValue: 'Avg Order Value',
     onTimeDelivery: 'On-Time Delivery',
     itemsCount: '{count} items',
+    itemsCountOne: '{count} item',
     quantity: 'Qty',
+    submittedOrders: 'Submitted Orders',
+    noSubmittedOrders: 'No restocking orders yet. Place one from the Restocking tab.',
+    submittedLoadFailed: 'Failed to load submitted orders',
+    leadTimeDays: '{count} days',
     table: {
       orderNumber: 'Order Number',
+      leadTime: 'Lead Time',
       orderId: 'Order ID',
       orderDate: 'Order Date',
       date: 'Date',
@@ -175,6 +182,7 @@ export default {
     stableDemand: 'Stable Demand',
     decreasingDemand: 'Decreasing Demand',
     itemsCount: '{count} items',
+    itemsCountOne: '{count} item',
     more: 'more...',
     demandForecasts: 'Demand Forecasts',
     table: {
@@ -185,6 +193,42 @@ export default {
       change: 'Change',
       trend: 'Trend',
       period: 'Period'
+    }
+  },
+
+  // Restocking
+  restocking: {
+    title: 'Restocking',
+    description: 'Set a budget and restock the items with the largest forecast shortfall',
+    budget: 'Available Budget',
+    budgetCoverage: 'Covers {percent}% of the {total} needed to meet forecasted demand',
+    orderTotal: 'Order Total',
+    remainingBudget: 'Remaining Budget',
+    itemsToOrder: 'Items to Order',
+    leadTime: 'Delivery Lead Time',
+    days: '{count} days',
+    recommendedItems: 'Recommended Items',
+    rankingNote: 'Increasing demand first, then largest shortfall',
+    noShortfall: 'Stock already covers forecasted demand for every item.',
+    noItemsInBudget: 'Increase the budget to include at least one item.',
+    partial: 'Partial',
+    overBudget: 'Over budget',
+    placeOrder: 'Place Order',
+    placing: 'Placing order...',
+    orderPlaced: 'Order {number} placed. Expected delivery {date}.',
+    viewInOrders: 'View in Orders',
+    orderFailed: 'Failed to place order',
+    table: {
+      sku: 'SKU',
+      itemName: 'Item Name',
+      trend: 'Trend',
+      forecastedDemand: 'Forecast',
+      onHand: 'On Hand',
+      shortfall: 'Shortfall',
+      orderQty: 'Order Qty',
+      unitCost: 'Unit Cost',
+      lineTotal: 'Line Total',
+      leadTime: 'Lead Time'
     }
   },
 
@@ -204,6 +248,7 @@ export default {
     shipped: 'Shipped',
     processing: 'Processing',
     backordered: 'Backordered',
+    submitted: 'Submitted',
     inStock: 'In Stock',
     lowStock: 'Low Stock',
     adequate: 'Adequate'
@@ -302,6 +347,37 @@ export default {
     dueDate: 'Due Date',
     addTask: 'Add Task',
     noTasks: 'No tasks yet. Add your first task above!'
+  },
+
+  // Purchase Order Modal
+  purchaseOrder: {
+    createTitle: 'Create Purchase Order',
+    viewTitle: 'Purchase Order',
+    item: 'Item',
+    shortage: 'Shortage',
+    units: 'units',
+    supplierName: 'Supplier Name',
+    supplierPlaceholder: 'Enter supplier name...',
+    quantity: 'Quantity',
+    unitCost: 'Unit Cost',
+    expectedDelivery: 'Expected Delivery Date',
+    notes: 'Notes (optional)',
+    notesPlaceholder: 'Add any notes for this order...',
+    total: 'Total',
+    poId: 'PO ID',
+    status: 'Status',
+    createdDate: 'Created Date',
+    submit: 'Create Purchase Order',
+    submitting: 'Creating...',
+    cancel: 'Cancel',
+    close: 'Close',
+    loading: 'Loading purchase order...',
+    loadFailed: 'Failed to load purchase order',
+    createFailed: 'Failed to create purchase order',
+    supplierRequired: 'Supplier name is required',
+    quantityInvalid: 'Quantity must be a whole number of at least 1',
+    unitCostInvalid: 'Unit cost must be greater than 0',
+    dateRequired: 'Expected delivery date is required'
   },
 
   // Language
