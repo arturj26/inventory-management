@@ -14,13 +14,13 @@
             <div class="trend-icon">↑</div>
             <div>
               <div class="trend-label">{{ t('demand.increasingDemand') }}</div>
-              <div class="trend-count">{{ t('demand.itemsCount', { count: getForecastsByTrend('increasing').length }) }}</div>
+              <div class="trend-count">{{ itemsLabel(getForecastsByTrend('increasing').length) }}</div>
             </div>
           </div>
           <div class="trend-items">
             <div v-for="item in getForecastsByTrend('increasing').slice(0, 5)" :key="item.id" class="trend-item">
               <span class="item-name">{{ item.item_name }}</span>
-              <span class="item-change">+{{ getChangePercent(item) }}%</span>
+              <span class="item-change">{{ getChangePercent(item) }}%</span>
             </div>
             <div v-if="getForecastsByTrend('increasing').length > 5" class="more-items">
               +{{ getForecastsByTrend('increasing').length - 5 }} {{ t('demand.more') }}
@@ -33,7 +33,7 @@
             <div class="trend-icon">→</div>
             <div>
               <div class="trend-label">{{ t('demand.stableDemand') }}</div>
-              <div class="trend-count">{{ t('demand.itemsCount', { count: getForecastsByTrend('stable').length }) }}</div>
+              <div class="trend-count">{{ itemsLabel(getForecastsByTrend('stable').length) }}</div>
             </div>
           </div>
           <div class="trend-items">
@@ -52,7 +52,7 @@
             <div class="trend-icon">↓</div>
             <div>
               <div class="trend-label">{{ t('demand.decreasingDemand') }}</div>
-              <div class="trend-count">{{ t('demand.itemsCount', { count: getForecastsByTrend('decreasing').length }) }}</div>
+              <div class="trend-count">{{ itemsLabel(getForecastsByTrend('decreasing').length) }}</div>
             </div>
           </div>
           <div class="trend-items">
@@ -170,6 +170,10 @@ export default {
       return forecasts.value.filter(f => f.trend === trend)
     }
 
+    // English needs a singular form ("1 item"); Japanese maps both keys to the same text
+    const itemsLabel = (count) =>
+      t(count === 1 ? 'demand.itemsCountOne' : 'demand.itemsCount', { count })
+
     const getChangePercent = (forecast) => {
       const change = ((forecast.forecasted_demand - forecast.current_demand) / forecast.current_demand * 100).toFixed(1)
       return change > 0 ? `+${change}` : change
@@ -215,6 +219,7 @@ export default {
       error,
       forecasts,
       getForecastsByTrend,
+      itemsLabel,
       getChangePercent,
       getChangeColor,
       translatePeriod

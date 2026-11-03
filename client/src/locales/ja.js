@@ -6,6 +6,7 @@ export default {
     orders: '注文',
     finance: '財務',
     demandForecast: '需要予測',
+    restocking: '補充発注',
     companyName: '触媒コンポーネンツ',
     subtitle: '在庫管理システム'
   },
@@ -111,9 +112,15 @@ export default {
     avgOrderValue: '平均注文額',
     onTimeDelivery: '定時配達',
     itemsCount: '{count}件',
+    itemsCountOne: '{count}件',
     quantity: '数量',
+    submittedOrders: '発注済みの注文',
+    noSubmittedOrders: '補充発注はまだありません。補充発注タブから発注できます。',
+    submittedLoadFailed: '発注済みの注文を読み込めませんでした',
+    leadTimeDays: '{count}日',
     table: {
       orderNumber: '注文番号',
+      leadTime: 'リードタイム',
       orderId: '注文ID',
       orderDate: '注文日',
       date: '日付',
@@ -175,6 +182,7 @@ export default {
     stableDemand: '需要安定',
     decreasingDemand: '需要減少',
     itemsCount: '{count}件',
+    itemsCountOne: '{count}件',
     more: 'さらに...',
     demandForecasts: '需要予測',
     table: {
@@ -185,6 +193,42 @@ export default {
       change: '変化',
       trend: 'トレンド',
       period: '期間'
+    }
+  },
+
+  // Restocking
+  restocking: {
+    title: '補充発注',
+    description: '予算を設定し、予測不足が最も大きい品目を補充します',
+    budget: '利用可能な予算',
+    budgetCoverage: '予測需要を満たすのに必要な{total}の{percent}%をカバー',
+    orderTotal: '注文合計',
+    remainingBudget: '残り予算',
+    itemsToOrder: '発注品目数',
+    leadTime: '納品リードタイム',
+    days: '{count}日',
+    recommendedItems: '推奨品目',
+    rankingNote: '需要増加の品目を優先し、次に不足数の多い順',
+    noShortfall: 'すべての品目で在庫が予測需要を満たしています。',
+    noItemsInBudget: '少なくとも1品目を含めるには予算を増やしてください。',
+    partial: '一部',
+    overBudget: '予算超過',
+    placeOrder: '発注する',
+    placing: '発注中...',
+    orderPlaced: '注文{number}を発注しました。配達予定日：{date}',
+    viewInOrders: '注文で表示',
+    orderFailed: '発注に失敗しました',
+    table: {
+      sku: 'SKU',
+      itemName: '品目名',
+      trend: 'トレンド',
+      forecastedDemand: '予測',
+      onHand: '在庫',
+      shortfall: '不足',
+      orderQty: '発注数',
+      unitCost: '単価',
+      lineTotal: '小計',
+      leadTime: 'リードタイム'
     }
   },
 
@@ -204,6 +248,7 @@ export default {
     shipped: '出荷済み',
     processing: '処理中',
     backordered: 'バックオーダー',
+    submitted: '発注済み',
     inStock: '在庫あり',
     lowStock: '在庫僅少',
     adequate: '適量'
@@ -302,6 +347,37 @@ export default {
     dueDate: '期限',
     addTask: 'タスクを追加',
     noTasks: 'タスクがありません。上記からタスクを追加してください！'
+  },
+
+  // Purchase Order Modal
+  purchaseOrder: {
+    createTitle: '発注書を作成',
+    viewTitle: '発注書',
+    item: '品目',
+    shortage: '不足数',
+    units: '個',
+    supplierName: '仕入先名',
+    supplierPlaceholder: '仕入先名を入力...',
+    quantity: '数量',
+    unitCost: '単価',
+    expectedDelivery: '納品予定日',
+    notes: '備考（任意）',
+    notesPlaceholder: 'この発注に関する備考を入力...',
+    total: '合計',
+    poId: '発注ID',
+    status: 'ステータス',
+    createdDate: '作成日',
+    submit: '発注書を作成',
+    submitting: '作成中...',
+    cancel: 'キャンセル',
+    close: '閉じる',
+    loading: '発注書を読み込み中...',
+    loadFailed: '発注書の読み込みに失敗しました',
+    createFailed: '発注書の作成に失敗しました',
+    supplierRequired: '仕入先名は必須です',
+    quantityInvalid: '数量は1以上の整数で入力してください',
+    unitCostInvalid: '単価は0より大きい値を入力してください',
+    dateRequired: '納品予定日は必須です'
   },
 
   // Language
